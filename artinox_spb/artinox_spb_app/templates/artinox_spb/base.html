@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{%block head%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS с CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <!-- jQuery с CDN -->
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script> -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- Bootstrap Bundle JS с CDN -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous"></script>
+  
+ 
+    <link rel="stylesheet" href="{% static '/artinox_spb/css/style.css' %}">
+    <script src="{% static '/artinox_spb/js/code.js' %}"></script>
+
+    <title>{{title}}</title>
+</head>
+{%endblock%}
+<body>
+	{%block header%}
+    <header>
+        <div class="container">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-fixed-top">
+                <div class="container"> 
+                    <a class="navbar-brand" href="#">Artinox</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            {%for i in menu%}
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">{{i}}<span class="sr-only">(current)</span></a>
+                                </li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <div class="header-img image-filter gray-filter">
+            <div class="container">
+                <h1 class="h1-brand">Artinox</h1>
+                <h2 class="h2-brand">Проектирование, <br>изготовление, <br>монтаж, <br> металлоконструкций.</h2>
+                <p class="contacts">Тел: +7 (812) 985 36 92<br>Факс: +7 (812) 368 67 24<br>Email: vir6370@mail.ru<br></p>
+            </div>
+        </div>
+    </header>
+{%endblock%}
+{%block main%}
+    <main class="main">
+        <div class="container main main-raised">
+            <h3>Компания "Артинокс СПб" предлагает проектирование, изготовление и монтаж металлоконструкций и изделий из нержавеющей стали и других материалов</h3>
+
+            <p>
+                За период деятельности наша компания приобрела большой опыт работы с различными видами материала. Собственное специализированное производство, современное оборудование, высококвалифицированный персонал-все это позволяет производить металлоизделия и конструкции любой сложности.
+            </p>
+
+            <h3>Основное направление деятельности компании - проектирование, изготовление и монтаж:</h3>
+            <p>    
+                Материалы, применяемые нами для изготовления металлоконструкций - нержавеющая сталь (полированная, матовая, декоративная, цветная, перфорированная), латунь, сталь с полимерным покрытием, конструкционные и декоративные элементы разнообразных пород дерева, различные типы безопасного стекла, натурального и композитного камня, новейших синтетических материалов.
+            </p> 
+            <p>
+                Нержавеющая сталь и полированная латунь являются одними из самых долговечных материалов. Конструкции из этих материалов имеют превосходный внешний вид, отличаются изяществом и сдержанной эстетикой, отлично вписываясь в любой дизайн современного интерьера и экстерьера.
+            </p>
+            
+
+            <h3>Наши преимущества:</h3>
+            <p><strong>Отличительной особенностью наших металлоконструкций являются:</strong></p> 
+            <ul>
+            <li>отсутствие видимых элементов крепежа;</li>
+            <li>стойкость к расшатыванию, по сравнению со сборной конструкцией, так как мы используем сборно-сварную систему.</li>
+            </ul>
+
+            <p><strong>Мы выполняем полный цикл работ по изготовлению металлоконструкций:</strong></p>
+            <ul>
+                <li>от конструкторской разработки до монтажа готового изделия на объекте заказчика;</li>
+                <li>опытные бригады монтажников качественно и быстро установят готовые металлоконструкции на объекте;</li>
+                <li>на все наши изделия предоставляется гарантия и после гарантированное обслуживание;</li>
+                <li>обеспечиваем индивидуальный подход к клиенту и гибкую ценовую политику.</li>
+            </ul>
+            <p>
+                Наша компания имеет большой опыт изготовления и монтажа металлоконструкций по сложным и нестандартным проектам, долгосрочные, деловые связи с заказчиками.
+            </p>
+            
+            <h3>Примеры работ</h3>
+            <br>
+            <div class="slider">
+                <div class="slider__wrapper">
+                    <div class="slider__items">
+                        <div class="slider__item">
+                            <img class="slider_img" src="{%static 'artinox_spb/images/slider_1.jpg'%}" alt="">
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider_img" src="{%static 'artinox_spb/images/slider_2.jpg'%}" alt="">
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider_img" src="{%static 'artinox_spb/images/slider_3.jpg'%}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                <a class="slider__control slider__control_next" href="#" role="button"></a>
+            </div>
+            <br>
+            
+            <div class="portfolio">
+                <p>Больше примеров можно найти в <a href="#">нашем портфолио</a>.</p>
+            </div>
+            <h3>Каталог</h3>
+            <div class="links">
+                <table class="links-table">
+                    <tr>
+                        <td><a href="#">Изготовление маршевых, винтовых, комбинированных лестниц</a></td>
+                        <td><a href="#">Изготовление металлоконструкций</a></td>
+                        <td><a href="#">Изготовление нестандартных металоконструкций</a></td>
+                        <td><a href="#">Проектирование металоконструкций</a></td>
+
+                    </tr>
+                    <tr>
+                        <td><a href="#">Облицовка лифтовых порталов</a></td>
+                        <td><a href="#">Ёмкости</a></td>
+                        <td><a href="#">Перила и поручни</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Козырьки и навесы</a></td>
+                        <td><a href="#">Установка ограждений</a></td>
+                        <td><a href="#">Облицовка колонн</a></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="katalog-more">
+                <p><a href="#">Подробнее</a></p>
+            </div>
+        </div>
+            
+
+    </main>
+{%endblock%}
+{%block js%}
+<script src="{%static 'artinox_spb/js/slider.js' %}"></script>
+{%endblock%}
+</body>
+</html>
