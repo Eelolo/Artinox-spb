@@ -4,12 +4,38 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 from .models import *
 # Create your views here.
 
-menu = ['Главная','Каталог','Портфолио','Статьи',]
+menu = [{'title': 'главная', 'url': 'main'},
+        {'title': 'портфолио', 'url': 'portfolio'},
+        {'title': 'о нас', 'url': 'about'},
+        {'title': 'контакты', 'url': 'contacts'},
+        {'title': 'документы', 'url': 'documents'},
+        ]
+
+
 
 def index(request):
-    # posts =
-    return render(request, "artinox_spb/index.html", {'title':'Artinox Металлоконструкции', 'menu':menu})
+    posts = PageContent.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+        'title': 'ARTINOX металлоконструкции',
+    }
+    return render(request, "artinox_spb/index.html", context=context)
 
 def about(request):
-    return render(request, "artinox_spb/about.html", {'title':'О компании Artinox'})
+    posts = PageContent.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+        'title': 'ARTINOX О компании',
+    }
+    return render(request, "artinox_spb/about.html", context=context)
 
+def contacts(request):
+    pass
+
+def documents(request):
+    pass
+
+def portfolio(request):
+    pass
