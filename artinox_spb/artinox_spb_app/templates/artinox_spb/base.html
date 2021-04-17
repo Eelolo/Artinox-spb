@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<!-- Шапка -->
 {%block head%}
 <head>
     <meta charset="UTF-8">
@@ -12,35 +11,21 @@
     <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/media.css' %}">
     <title>{{title}}</title>
 </head>
-<body>
 {%endblock%}
-<!-- конец шапки -->
 <body>
-	{%block header%}
-    <section class="header">
-        <!--Навигация-->
-        <nav class="nav-menu">
-            {%for menu_item in menu%}
-                <a href="{{menu_item.url}}" class="nav-item">{{menu_item.title}}</a>
+<!--Навигация-->
+    {%block menu%}
+    <menu class="menu">
+        <nav class="nav__menu">
+            {%for menu__item in menu%}
+                <a href="{{menu__item.url}}" class="nav__item">{{menu__item.title}}</a>
             {%endfor%}
         </nav>
-    <div class="header__content">
-        <div class="header__content--textbox">
-            <h1>artinox</h1>
-                <p>I want to believe in time travel.<br>
-                    That one day I’ll come back for you.<br>
-                    Find you in the campus library aisles and I’d say -<br>
-                    "Oh my ancient Mars".<br>
-                </p>
-            
-            <a href="#" class="header__content--btn">Contact Us</a>
-        </div>
-        <div class="header__content--video"><iframe  src="https://www.youtube.com/embed/jGaTXMnScN0" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-        </section>
+    </menu>
 {%endblock%}
-
+    
 {%block content%}
+
 {%endblock%}
 
 {%block footer%}
