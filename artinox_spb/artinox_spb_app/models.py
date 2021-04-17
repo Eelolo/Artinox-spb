@@ -9,3 +9,6 @@ class PageContent(models.Model):
     creation_date = models.DateField(auto_now_add=True)
     moderation_date = models.DateField(auto_now=True)
     visibility = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
