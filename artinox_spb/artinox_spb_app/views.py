@@ -18,7 +18,6 @@ def index(request):
     context = {
         'posts': posts,
         'menu': menu,
-        'title': 'ARTINOX металлоконструкции',
     }
     return render(request, "artinox_spb/index.html", context=context)
 
@@ -27,7 +26,6 @@ def about(request):
     context = {
         'posts': posts,
         'menu': menu,
-        'title': 'ARTINOX О компании',
     }
     return render(request, "artinox_spb/about.html", context=context)
 

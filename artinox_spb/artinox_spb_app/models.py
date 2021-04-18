@@ -11,7 +11,7 @@ class PageContent(models.Model):
     page = models.ForeignKey('PageName', on_delete=models.PROTECT, null=True)
 
     def __str__(self):
-        return self.title
+        return self.block_name
 
 class PageName(models.Model):
     title = models.CharField(max_length=255, db_index=True)
@@ -19,3 +19,7 @@ class PageName(models.Model):
 
     def __str__(self):
         return self.title
+
+# class PageBlocks(models.Model):
+#     block_name = models.CharField(max_length=255)
+#
