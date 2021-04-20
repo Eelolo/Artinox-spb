@@ -13,6 +13,10 @@ class PageContent(models.Model):
     def __str__(self):
         return self.block_name
 
+    class Meta:
+        verbose_name = 'Контент страниц'
+        verbose_name_plural = 'Контент страниц'
+
 class PageName(models.Model):
     title = models.CharField(max_length=255, db_index=True)
     page_name = models.CharField(max_length=255)
