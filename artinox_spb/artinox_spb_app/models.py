@@ -24,6 +24,10 @@ class PageName(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Страницы'
+        verbose_name_plural = 'Страницы'
+
 # class PageBlocks(models.Model):
 #     block_name = models.CharField(max_length=255)
 #
