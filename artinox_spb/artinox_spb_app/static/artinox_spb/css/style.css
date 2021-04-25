@@ -73,6 +73,7 @@ display: block;
 padding: 2% 5%;
 }
 .nav__item:hover,
+.nav__item--active,
 .nav__item:focus {
 background-color:#ff3f40;
 }

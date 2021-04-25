@@ -30,10 +30,25 @@ def about(request):
     return render(request, "artinox_spb/about.html", context=context)
 
 def contacts(request):
-    pass
+    posts = PageContent.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, "artinox_spb/contacts.html", context=context)
 
 def documents(request):
-    pass
+    posts = PageContent.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, "artinox_spb/documents.html", context=context)
 
 def portfolio(request):
-    pass
+    posts = PageContent.objects.all()
+    context = {
+        'posts': posts,
+        'menu': menu,
+    }
+    return render(request, "artinox_spb/portfolio.html", context=context)

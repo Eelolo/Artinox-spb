@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load active_link_tags %}
 <html lang="en">
 {%block head%}
 <head>
@@ -17,13 +18,14 @@
     {%block menu%}
     <menu class="menu">
         <nav class="nav__menu">
-            {%for menu__item in menu%}
-                <a href="{{menu__item.url}}" class="nav__item">{{menu__item.title}}</a>
-            {%endfor%}
+            {% with request.resolver_match.url_name as url_name %}
+                {%for menu__item in menu%}
+                    <a href="{{menu__item.url}}" class="{% if url_name == menu__item.url %}nav__item--active{% endif %} nav__item">{{menu__item.title}}</a>
+                {%endfor%}
+            {% endwith %}
         </nav>
     </menu>
 {%endblock%}
-    
 {%block content%}
 
 {%endblock%}

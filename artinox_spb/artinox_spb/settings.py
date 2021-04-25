@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'artinox_spb_app.apps.ArtinoxSpbAppConfig',
+    'active_link',
 ]
 
 MIDDLEWARE = [
