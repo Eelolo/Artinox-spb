@@ -15,6 +15,7 @@ menu = [{'title': 'главная', 'url': 'main'},
 
 def index(request):
     posts = PageContent.objects.all()
+    
     context = {
         'posts': posts,
         'menu': menu,
