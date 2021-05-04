@@ -7,6 +7,3 @@ register = template.Library()
 def get_page_info():
     return PageInfo.objects.filter(pk__gte=0)
 
-
-def show_page_info():
-    pass

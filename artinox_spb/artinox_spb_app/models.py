@@ -31,3 +31,15 @@ class PageContent(models.Model):
         verbose_name_plural = 'Контент страниц'
 
 
+class UsersContacts(models.Model):
+    full_name = models.TextField(blank=True, null=False, verbose_name='ФИО')
+    email = models.CharField(max_length=255, verbose_name='email')
+    phone = models.CharField(null=False, max_length=16, verbose_name='номер телефона')
+    address = models.TextField(blank=True, null=True, verbose_name='Адрес заказчика')
+    product_name = models.TextField(blank=True, null=True, verbose_name='Наименование изделия')
+    #TODO: придумать хранение файлов заказчика ( тз и чертеж)
+    # technical_task = models.
+    #technical_plan = models.
+    task_text = models.TextField(blank=True, null=True, verbose_name='Комментарий заказчика')
+
+
