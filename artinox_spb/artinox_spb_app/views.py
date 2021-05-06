@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.middleware.csrf import get_token
 
+from .forms import *
 from .models import *
 # Create your views here.
 
@@ -15,12 +17,22 @@ menu = [{'title': 'главная', 'url': 'main'},
 
 def index(request):
     posts = PageContent.objects.all()
-    
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        print(form.is_valid())
+        print(form.cleaned_data)
+        if form.is_valid():
+            print('PIZDA')
+            form.save()
+            return redirect('main')
+    else:
+        form = UploadFileForm()
     context = {
         'posts': posts,
         'menu': menu,
+        'form' : form,
     }
-    return render(request, "artinox_spb/index.html", context=context)
+    return render(request, "artinox_spb/index.html", context=context,)
 
 def about(request):
     posts = PageContent.objects.all()

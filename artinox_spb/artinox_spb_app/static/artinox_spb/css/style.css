@@ -47,7 +47,7 @@ margin-left: 2%;
 }
 /*NAVIGATION*/
 .menu{
-max-width: 1920px;
+max-width: 1490px;
 margin: 0 auto 55px auto;
 padding: 0;
 }
@@ -80,7 +80,7 @@ background-color:#ff3f40;
 
 .header{
 margin: 0 auto;
-max-width: 1250px;
+max-width: 1490px;
 }
 
 
@@ -127,7 +127,7 @@ height: 400px;
 /*-------SECOND_SECTION-------*/
 .second-section{
 display: grid;
-max-width: 1250px;
+max-width: 1490px;
 margin: 0 auto;
 grid-template-columns: 0.5fr 0.5fr;
 grid-template-rows: 1fr;
@@ -247,7 +247,7 @@ color:#ff3f40;
 }
 
 .third-section--container{
-max-width: 1250px;
+max-width: 1490px;
 margin: 0 auto;
 display: flex;
 justify-content: space-around;
@@ -265,7 +265,7 @@ background-color: #ff3f40;
 
 /*FOURTH SECTION*/
 .fourth-section{
-max-width: 1250px;
+max-width: 1490px;
 margin: 0 auto 110px auto;
 }
 
@@ -285,7 +285,7 @@ margin-left: 2%;
 }
 .fourth-section__blocks{
 min-height: 430px;
-max-width: 1250px;
+max-width: 1490px;
 display: grid;
 grid-template-columns: 300px 1fr;
 grid-template-rows: 1fr;
@@ -377,79 +377,121 @@ border:none;
   background-color:#ff3440; 
 }
 
-.section-sixth{
-  max-width: 1250px;
+.order-form{
+  max-width: 1490px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 0.6fr 0.4fr;
   grid-template-rows: 0.3fr 1fr;
   grid-column-gap: 50px;
-  grid-template-areas: "section-sixth__header ."
-                         "section-sixth__form  section-sixth__information";
+  grid-template-areas: "order-form__header ."
+                         "order-form__form  order-form__information";
 }
-.section-sixth>h2{
+.order-form>h2{
 font-size: 2em;
 padding: 0px;
 margin: 0px;
 }
-.section-sixth__header{
-  grid-area:section-sixth__header;
+.order-form__header{
+  grid-area: order-form__header;
 }
-.section-sixth__information{
+.order-form__information{
 
   background-color: #2d2d2d;
   padding: 100px;
-  grid-area:section-sixth__information;
+  grid-area: order-form__information;
 }
-.section-sixth__information h4{
+.order-form__information h4{
 color: #EDEDED
 }
-.section-sixth__information p{
+.order-form__information p{
    color: #EDEDED;
    font-size: 1em;
 
 }
 
 
-.section-sixth__form{
-  grid-area:section-sixth__form;
+.order-form__form{
+  grid-area: order-form__form;
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  grid-template-rows: 0.5fr 3fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 3fr 0.5fr;
   grid-column-gap: 50px;
-  grid-row-gap: 30px;
-  grid-template-areas:  "section-sixth__element--name section-sixth__element--email"
-                        "section-sixth__element--textbox  section-sixth__element--textbox"
-                        "section-sixth__element--btn      section-sixth__element--btn ";
+  grid-row-gap: 10px;
+  grid-template-areas:  "order-form__element--fullname        order-form__element--fullname"
+                        "order-form__element--email           order-form__element--tel"
+                        "order-form__element--product_name    order-form__element--product_name"
+                        "order-form__element--address         order-form__element--address"
+                        "order-form__element--technical_task  order-form__element--technical_plan"
+                        "order-form__element--textbox         order-form__element--textbox"
+                        "order-form__element--btn             order-form__element--btn ";
 
 }
-.section-sixth__element{
+.order-form__element{
   margin: 5px;
   padding: 5px;
   border-radius: 10px;
   border:none;
   background-color: #fff;
 }
-.section-sixth__element--name{
-  grid-area: section-sixth__element--name;
+.order-form__element--fullname{
+ grid-area: order-form__element--fullname;
 }
-.section-sixth__element--email{
-  grid-area:section-sixth__element--email;
+
+.order-form__element--email{
+  grid-area: order-form__element--email;
 }
-.section-sixth__element--textbox{
-  grid-area:section-sixth__element--textbox;
+
+.order-form__element--tel{
+ grid-area: order-form__element--tel;
+}
+
+.order-form__element--product_name{
+  grid-area: order-form__element--product_name;
+}
+
+.order-form__element--address{
+  grid-area: order-form__element--address;
+}
+
+
+.order-form__element--textbox{
+  grid-area: order-form__element--textbox;
   resize: none;
 }
-.section-sixth__element--btn{
+
+.order-form__element--technical_task{
+grid-area: order-form__element--technical_task;
+
+}
+
+.order-form__element--technical_task::-webkit-file-upload-button {
+ 
+}
+.order-form__element--technical_task::before{
+
+}
+.order-form__element--technical_plan{
+ grid-area: order-form__element--technical_plan;
+}
+
+.order-form__element--technical_plan::-webkit-file-upload-button {
+ 
+}
+.order-form__element--technical_plan::before{
+
+}
+.order-form__element--btn{
   cursor: pointer;
   color: #fff;
   font-weight: bold;
   background-color: #ff3f40;
-  grid-area:section-sixth__element--btn;
-  transition: all 0.2s linear 0s; 
+  grid-area: order-form__element--btn;
+  transition: all 0.2s linear 0s;
+  text-transform: uppercase;
 }
-.section-sixth__element--btn:hover,
-.section-sixth__element--btn:focus{
+.order-form__element--btn:hover,
+.order-form__element--btn:focus{
   background-color: #deeded;
   color: #000;
 }
@@ -457,7 +499,7 @@ color: #EDEDED
 
 .footer{
   margin: 0 auto;
-  max-width: 1250px;
+  max-width: 1490px;
   background-color:#2d2d2d;
 
 }
@@ -468,14 +510,20 @@ color: #EDEDED
 }
 
 /*portfolio*/
-
+.portfolio__title{
+  margin: 0 auto;
+  max-width: 1490px;
+  text-align: center;
+}
 .portfolio__main{
   display: grid;
   margin: 0 auto;
-  max-width: 1920px;
+  max-width: 1490px;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr, 3fr;
-  grid-template-areas:"portfolio__main__categories portfolio__main__content"
+  grid-template-areas:"portfolio__main__categories portfolio__main__content";
+  background: green;   
+
 
 }
 /*НЕОБХОДИМО УБРАТЬ СТРОГУЮ ПРИВЯЗКУ К КОЛИЧЕСТВУ СТРОК*/
@@ -492,15 +540,17 @@ color: #EDEDED
 .portfolio__main__content{
   grid-area:portfolio__main__content;
   display: grid;
+  margin: auto auto;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 30px;
-  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+   justify-content: space-between; 
 }
 
 .portfolio__main__content--img{
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background: red;
 }

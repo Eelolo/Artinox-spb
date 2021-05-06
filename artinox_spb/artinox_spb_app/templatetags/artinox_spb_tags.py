@@ -5,5 +5,5 @@ register = template.Library()
 
 @register.simple_tag()
 def get_page_info():
-    return PageInfo.objects.filter(pk__gte=0)
+    return Page.objects.filter(pk__gte=0)
 

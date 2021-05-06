@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load artinox_spb_tags%}
-{%get_page_info as page_info%}
+{%get_page_info as page%}
 <html lang="en">
 {%block head%}
 <head>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/media.css' %}">
     {% with request.resolver_match.url_name as url_name %}
-        {%for i in page_info%}
+        {%for i in page%}
             {% if url_name == i.page_name %}
                 <title>
                     {{i.title}}

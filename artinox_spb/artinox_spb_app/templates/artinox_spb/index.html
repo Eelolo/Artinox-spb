@@ -12,8 +12,9 @@
                     Find you in the campus library aisles and I’d say -<br>
                     "Oh my ancient Mars".<br>
                 </p>
-            
-            <a href="#" class="header__content--btn">Contact Us</a>
+            {% with request.resolver_match.url_name as url_name %}
+            	<a href="{{url_name}}#order-form" class="header__content--btn">Сделать заказ</a>
+            {% endwith %}
         </div>
         <div class="header__content--video"><iframe  src="https://www.youtube.com/embed/jGaTXMnScN0" frameborder="0" allowfullscreen></iframe></div>
     </div>
@@ -117,22 +118,35 @@
 	<!--/пятый блок-->
 
 	<!--шестой блок-->
-	<section class="section-sixth">
-		<div class="section-sixth__header">
+	<section class="order-form" id="order-form">
+		<div class="order-form__header">
 			<h2>GET IN TOUCH</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Obcaecati minima quas dolore illo, sapiente eveniet <br>necessitatibus sunt nisi rerum magnam.</p>
 		</div>
-			<form action="POST" name="section-sixth__form" class="section-sixth__form">
-				<input type="text" name="name" class=" section-sixth__element section-sixth__element--name" required="" placeholder="ФИО">
+		
+			<form action="{% url 'main' %}" method="POST" name="order-form__form" class="order-form__form">{% csrf_token %}
 
-				<input type="email" name="email" class=" section-sixth__element section-sixth__element--email" required=""
-				placeholder="Ваше Email">
+				<input type="text" name="fullname" class=" order-form__element order-form__element--fullname" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
 
-				<textarea type="textarea" name="message" class=" section-sixth__element section-sixth__element--textbox" required="" rows="20" placeholder="Введите ваше сообщение"></textarea> 
+				<input type="email" name="email" class=" order-form__element order-form__element--email" required=""
+				placeholder="Email" oninvalid="this.setCustomValidity('Необходимо заполнить email')">
 
-				<input type="submit" name="button" class="section-sixth__element section-sixth__element--btn" required="" value="SEND MESSAGE">
+				<input type="tel" name="tel" class="order-form__element order-form__element--tel" required=""
+				placeholder="Номер телефона" oninvalid="this.setCustomValidity('Необходимо заполнить телефон')">
+
+				<input type="text" name="product_name" class=" order-form__element order-form__element--product_name" required="" placeholder="Название изделия" oninvalid="this.setCustomValidity('Необходимо заполнить название изделия')">
+
+				<input type="text" name="address" class=" order-form__element order-form__element--address" required="" placeholder="Адрес установки" oninvalid="this.setCustomValidity('Необходимо заполнить адрес')">
+				
+				<textarea type="textarea" name="task_text" class=" order-form__element order-form__element--textbox"  rows="20" placeholder="Комментарий"></textarea>
+
+				<input type="file" name="technical_task" class=" order-form__element order-form__element--technical_task" enctype="multipart/form-data" required placeholder="Техничческое задание">
+
+				<input type="file" name="technical_plan" class=" order-form__element order-form__element--technical_plan" enctype="multipart/form-data" required placeholder="Чертёж">
+
+				<input type="submit" name="button" class="order-form__element order-form__element--btn" required="" value="отпарвить">
 			</form>
-		<div class="section-sixth__information">
+		<div class="order-form__information">
 			<h4>CONTACT INFO</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore beatae deserunt sint dignissimos. Eius, vero, nesciunt. Eveniet ut, suscipit laboriosam, est sunt explicabo repellat perferendis odit porro cumque, delectus labore.</p>
 		</div>

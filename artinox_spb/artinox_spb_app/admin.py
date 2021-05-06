@@ -13,7 +13,7 @@ class PageContentAdmin(admin.ModelAdmin):
 class PageContentInLine(admin.StackedInline):
     model = PageContent
 
-@admin.register(PageInfo)
+@admin.register(Page)
 class AllPageAdmin(admin.ModelAdmin):
     list_display = ('page_name', 'title',)
     list_display_links = ('page_name','title',)
