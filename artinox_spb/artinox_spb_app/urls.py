@@ -9,5 +9,5 @@ urlpatterns = [
     path('about', about, name='about'),
     path('contacts', contacts, name='contacts'),
     path('documents', documents, name='documents'),
-
+    path('upload_files', upload_files, name='upload_files')
 ]

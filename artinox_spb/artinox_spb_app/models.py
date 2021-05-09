@@ -41,5 +41,5 @@ class UsersContacts(models.Model):
     product_name = models.CharField(max_length=255, null=False, verbose_name='Наименование изделия')
     task_text = models.TextField(blank=True, null=True, verbose_name='Комментарий')
     send_date = models.DateField(auto_now_add=True, verbose_name='дата отправки')
-    technical_task = models.FileField(upload_to='documents/')
-    technical_plan = models.FileField(upload_to='documents/')
+    technical_task = models.FileField(blank=False, null=False, upload_to='documents/')
+    technical_plan = models.FileField(blank=False, null=False, upload_to='documents/')

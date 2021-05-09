@@ -124,7 +124,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Obcaecati minima quas dolore illo, sapiente eveniet <br>necessitatibus sunt nisi rerum magnam.</p>
 		</div>
 		
-			<form action="{% url 'main' %}" method="POST" name="order-form__form" class="order-form__form">{% csrf_token %}
+			<form action="{% url 'upload_files' %}" method="POST" name="order-form__form" class="order-form__form" enctype="multipart/form-data">{% csrf_token %}
 
 				<input type="text" name="fullname" class=" order-form__element order-form__element--fullname" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
 
