@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.middleware.csrf import get_token
-# from django.urls import reverse_lazy
-# from django.views.generic.edit import CreateView
+from django.views.generic import ListView, DetailView
 
 
 
@@ -17,6 +16,11 @@ menu = [{'title': 'главная', 'url': 'main'},
         {'title': 'документы', 'url': 'documents'},
         ]
 
+
+class ArtinoxMain(ListView):
+    model = PageContent
+    template_name = 'artinox_spb/index.html'
+    # context_object_name =
 
 
 def index(request):

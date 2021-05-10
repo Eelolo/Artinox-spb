@@ -338,19 +338,19 @@ color:#ff3f40;
   display: inline-block;
 }
 
-.section-fifth{
+.feedback{
 max-width: 1500px;
 margin: 0 auto;
 background-color:#e9e8e3;
 text-align: center;
 margin-bottom: 100px;
 }
-.section-fifth h2{
+.feedback h2{
 font-size: 2em;
 }
 
 
-.subscribe{
+.feedback__form{
 margin: 0 auto;
 max-width: 770px;
 display: grid;
@@ -359,13 +359,13 @@ grid-template-rows: 1fr;
 grid-column-gap: 10%;
 margin-top: 5%;
 }
-.subscribe-emailAdress{
+.feedback__form--email{
 padding: 5%;
 border-radius: 10px;
 border:none;
 font-size: 1.5em;
 }
-.subscribe-btn{
+.feedback__form--btn{
 border-radius: 10px;
 background-color: #ff2d2d;
 color: #fff;
@@ -373,7 +373,7 @@ font-weight: bold;
 cursor: pointer;
 border:none;
 }
-.subscribe-btn:hover{
+.feedback__form--btn:hover{
   background-color:#ff3440; 
 }
 

@@ -3,8 +3,8 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', index, name='main'),
-    path('main', index, name='main'),
+    path('', ArtinoxMain.as_view(), name='main'),
+    path('main', ArtinoxMain.as_view(), name='main'),
     path('portfolio', portfolio, name='portfolio'),
     path('about', about, name='about'),
     path('contacts', contacts, name='contacts'),
