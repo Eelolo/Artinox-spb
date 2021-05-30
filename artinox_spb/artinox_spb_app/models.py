@@ -3,11 +3,8 @@ import os
 # Create your models here.
 
 class Page(models.Model):
-    title = models.CharField(max_length=255, db_index=True, verbose_name='заголовок')
     page_name = models.CharField(max_length=255, verbose_name='название страницы')
 
-    def __str__(self):
-        return self.title
 
     class Meta:
         verbose_name = 'Страницы'
@@ -15,6 +12,7 @@ class Page(models.Model):
         ordering = ['id']
 
 class PageContent(models.Model):
+    title = models.CharField(max_length=255, db_index=True, verbose_name='заголовок')
     content_text = models.TextField(blank=True, null=True, verbose_name='содержимое блока')
     photo = models.ImageField(upload_to=f'photos/{Page.page_name}', null=True, verbose_name='путь до фото')
     creation_date = models.DateField(auto_now_add=True, verbose_name='дата создания')
@@ -32,8 +30,6 @@ class PageContent(models.Model):
 
 
 class UsersContacts(models.Model):
-
-
     fullname = models.CharField(max_length=255, null=False, verbose_name='ФИО')
     email = models.CharField(max_length=255, null=False, verbose_name='Email')
     tel = models.CharField(max_length=16, null=False, verbose_name='Номер телефона')
@@ -41,5 +37,5 @@ class UsersContacts(models.Model):
     product_name = models.CharField(max_length=255, null=False, verbose_name='Наименование изделия')
     task_text = models.TextField(blank=True, null=True, verbose_name='Комментарий')
     send_date = models.DateField(auto_now_add=True, verbose_name='дата отправки')
-    technical_task = models.FileField(blank=False, null=False, upload_to='documents/')
-    technical_plan = models.FileField(blank=False, null=False, upload_to='documents/')
+    technical_task = models.FileField(blank=False, null=False, upload_to=f'documents/{fullname}/{product_name}/Техническое задание/')
+    technical_plan = models.FileField(blank=False, null=False, upload_to=f'documents/{fullname}/{product_name}/Чертеж')

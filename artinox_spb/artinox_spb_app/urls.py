@@ -3,11 +3,11 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', ArtinoxMain.as_view(), name='main'),
-    path('main', ArtinoxMain.as_view(), name='main'),
+    path('', MainView.as_view(), name='main'),
+    path('main', MainView.as_view(), name='main'),
     path('portfolio', portfolio, name='portfolio'),
-    path('about', about, name='about'),
-    path('contacts', contacts, name='contacts'),
+    path('about', AboutView.as_view(), name='about'),
+    path('contacts', ContactsView.as_view(), name='contacts'),
     path('documents', documents, name='documents'),
-    path('upload_files', upload_files, name='upload_files')
+    path('upload_files', UploadFiles.upload_files, name='upload_files')
 ]

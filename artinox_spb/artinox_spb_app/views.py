@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpRequest
 from django.middleware.csrf import get_token
 from django.views.generic import ListView, DetailView
-
 
 
 from .forms import *
@@ -17,7 +16,7 @@ menu = [{'title': 'главная', 'url': 'main'},
         ]
 
 
-class ArtinoxMain(ListView):
+class MainView(ListView):
     model = PageContent
     template_name = 'artinox_spb/index.html'
     # context_object_name =
@@ -31,33 +30,28 @@ def index(request):
     }
     return render(request, "artinox_spb/index.html", context=context,)
 
-def upload_files(request):
+class UploadFiles(ListView):
     posts = PageContent.objects.all()
-    if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        print(form)
-        print(form.is_valid())
-        print(form.cleaned_data)
-        if form.is_valid():
-            form.save()
-    else:
-        form = UploadFileForm()
-    return redirect('main')
-def about(request):
-    posts = PageContent.objects.all()
-    context = {
-        'posts': posts,
-        'menu': menu,
-    }
-    return render(request, "artinox_spb/about.html", context=context)
 
-def contacts(request):
-    posts = PageContent.objects.all()
-    context = {
-        'posts': posts,
-        'menu': menu,
-    }
-    return render(request, "artinox_spb/contacts.html", context=context)
+    def upload_files(request):
+        if request.method == 'POST':
+            form = UploadFileForm(request.POST, request.FILES)
+            print(form)
+            print(form.is_valid())
+            print(form.cleaned_data)
+            if form.is_valid():
+                form.save()
+        else:
+            form = UploadFileForm()
+        return redirect('main')
+
+class AboutView(ListView):
+    model = PageContent
+    template_name = 'artinox_spb/about.html'
+
+class ContactsView(ListView):
+    model = PageContent
+    template_name = 'artinox_spb/contacts.html'
 
 def documents(request):
     posts = PageContent.objects.all()
