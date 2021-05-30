@@ -1,5 +1,8 @@
 from django.db import models
 import os
+import locale
+from django.utils.encoding import smart_str
+
 # Create your models here.
 
 class Page(models.Model):
@@ -28,14 +31,21 @@ class PageContent(models.Model):
         verbose_name = 'Контент страниц'
         verbose_name_plural = 'Контент страниц'
 
+def technical_plan_directory_path(instance, filename):
+    return os.path.join('documents',instance.fullname.lower(),'техническое задание', filename.lower())
 
-class UsersContacts(models.Model):
+def technical_task_directory_path(instance, filename):
+    return os.path.join('documents',instance.fullname.lower(),'чертежы',filename.lower())
+
+
+
+class UsersTasks(models.Model):
     fullname = models.CharField(max_length=255, null=False, verbose_name='ФИО')
-    email = models.CharField(max_length=255, null=False, verbose_name='Email')
+    email = models.EmailField(max_length=255, null=False, verbose_name='Email')
     tel = models.CharField(max_length=16, null=False, verbose_name='Номер телефона')
     address = models.TextField(null=False, verbose_name='Адрес установки')
     product_name = models.CharField(max_length=255, null=False, verbose_name='Наименование изделия')
     task_text = models.TextField(blank=True, null=True, verbose_name='Комментарий')
-    send_date = models.DateField(auto_now_add=True, verbose_name='дата отправки')
-    technical_task = models.FileField(blank=False, null=False, upload_to=f'documents/{fullname}/{product_name}/Техническое задание/')
-    technical_plan = models.FileField(blank=False, null=False, upload_to=f'documents/{fullname}/{product_name}/Чертеж')
+    send_date = models.DateField(auto_now_add=True, verbose_name='Дата отправки')
+    technical_task = models.FileField(blank=False, null=False, upload_to=technical_plan_directory_path)
+    technical_plan = models.FileField(blank=False, null=False, upload_to=technical_task_directory_path)

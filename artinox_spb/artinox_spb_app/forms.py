@@ -5,7 +5,7 @@ from  .models import *
 
 class UploadFileForm(forms.ModelForm):
     class Meta:
-        model = UsersContacts
+        model = UsersTasks
         fields = ['fullname', 'email', 'tel', 'address', 'product_name', 'task_text', 'technical_task', 'technical_plan']
 
     def clean_fullname(self):

@@ -55,8 +55,8 @@
 			<hr>
 		</div>
 		<ul>
-			<li><a href="#">ALL</a></li>
-			<li><a href="#">PRINT TEMPLATE</a></li>
+			<li><a href="#">все</a></li>
+			<li><a href="#">недавние</a></li><!--  тут будут ссылка на недавно добавленные фото -->
 			<li><a href="#">WEB TEMPLATE</a></li>
 			<li><a href="#">USER INTERFACE</a></li>
 			<li><a href="#">MOCK-UP</a></li>
@@ -124,7 +124,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Obcaecati minima quas dolore illo, sapiente eveniet <br>necessitatibus sunt nisi rerum magnam.</p>
 		</div>
 		
-			<form action="{% url 'upload_files' %}" method="POST" name="order-form__form" class="order-form__form" enctype="multipart/form-data">{% csrf_token %}
+			<form action="{% url 'upload_files' %}" method="POST" name="order-form__form" accept-charset='utf-8' class="order-form__form" enctype="multipart/form-data">{% csrf_token %}
 
 				<input type="text" name="fullname" class=" order-form__element order-form__element--fullname" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
 

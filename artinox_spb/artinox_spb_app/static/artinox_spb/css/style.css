@@ -237,11 +237,12 @@ justify-content: space-around;
 align-items: center;
 margin-bottom: 50px;
 }
+
 .third-section a{
 font-weight: bold;
 color: rgb(0, 0, 0);
 opacity: 0.8;
-
+text-transform: uppercase;
 }
 
 .third-section a:hover,
