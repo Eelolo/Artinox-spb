@@ -105,12 +105,15 @@
 
 <!--пятый блок-->
 	<section class="feedback">
-		<h2>Design tips,tricks,and freebies.Delivered weekly</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod.</p>
+		<h2>оставьте свои контактные данные и мы с вами свяжемся</h2>
 		<div>
 			<form action="POST" name="feedback__form" class="feedback__form">
-				<input type="email" name="feedback__form--email" class="feedback__form--email" placeholder="Email Adress..." required="">
-				<input type="submit" class="feedback__form--btn" name="feedback__form--btn" value="SUBSCRIBE">
+				<input type="text" name="feedback__form--fullname" class="feedback__form--fullname feedback__form__element" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
+				<input type="email" name="feedback__form--email" class="feedback__form--email feedback__form__element" placeholder="Email" required=""
+				placeholder="Email" oninvalid="this.setCustomValidity('Необходимо заполнить email')">
+				<input type="tel" name="feedback__form--tel" class="feedback__form--tel feedback__form__element" placeholder="Номер телефона" required=""
+				placeholder="Номер телефона" oninvalid="this.setCustomValidity('Необходимо заполнить телефон')">
+				<input type="submit" class="feedback__form--btn feedback__form__element" name="feedback__form--btn" value="SUBSCRIBE">
 			</form>
 			<div class="section-fifth__btn"></div>
 		</div>

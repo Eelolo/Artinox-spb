@@ -343,39 +343,58 @@ color:#ff3f40;
 }
 
 .feedback{
-max-width: 1500px;
+max-width: 1440px;
 margin: 0 auto;
 background-color:#e9e8e3;
 text-align: center;
 margin-bottom: 100px;
 }
+
 .feedback h2{
 font-size: 2em;
 }
 
-
 .feedback__form{
-margin: 0 auto;
-max-width: 770px;
-display: grid;
-grid-template-columns: 0.7fr 0.3fr;
-grid-template-rows: 1fr;
-grid-column-gap: 10%;
-margin-top: 5%;
+  margin: 0 auto;
+  max-width: 745px;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 10px;
+  margin-top: 5%;
+  grid-template-areas: "feedback__form--fullname feedback__form--fullname"
+                      "feedback__form--email feedback__form--tel"
+                      "feedback__form--btn feedback__form--btn";
 }
+
+.feedback__form__element{
+  padding: 2%;
+  border-radius: 10px;
+  border:none;
+  font-size: 1.5em;
+}
+
+.feedback__form--fullname{
+  grid-area: feedback__form--fullname;
+}
+
 .feedback__form--email{
-padding: 5%;
-border-radius: 10px;
-border:none;
-font-size: 1.5em;
+  grid-area: feedback__form--email;
 }
+
+.feedback__form--tel{
+  grid-area: feedback__form--tel;
+} 
+
 .feedback__form--btn{
-border-radius: 10px;
-background-color: #ff2d2d;
-color: #fff;
-font-weight: bold;
-cursor: pointer;
-border:none;
+  background-color: #ff2d2d;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  grid-area: feedback__form--btn;
+  padding: 2% 15%;
+  margin: 0 auto;
 }
 .feedback__form--btn:hover{
   background-color:#ff3440; 
@@ -392,15 +411,14 @@ border:none;
                          "order-form__form  order-form__information";
 }
 .order-form>h2{
-font-size: 2em;
-padding: 0px;
-margin: 0px;
+  font-size: 2em;
+  padding: 0px;
+  margin: 0px;
 }
 .order-form__header{
   grid-area: order-form__header;
 }
 .order-form__information{
-
   background-color: #2d2d2d;
   padding: 100px;
   grid-area: order-form__information;
@@ -409,8 +427,8 @@ margin: 0px;
 color: #EDEDED
 }
 .order-form__information p{
-   color: #EDEDED;
-   font-size: 1em;
+  color: #EDEDED;
+  font-size: 1em;
 
 }
 
