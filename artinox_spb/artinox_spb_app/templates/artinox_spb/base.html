@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+{% load artinox_spb_tags%}
+{%get_page_info as page%}
+{%get_page_content as page_content%}
+<html lang="ru">
+{%block head%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/artinox_spb/css/media.css' %}">
+    {% with request.resolver_match.url_name as url_name %}
+        {%for i in page%}
+            {% if url_name == i.page_name %}
+                <title>
+                    {{i.title}}
+                </title>
+            {% endif %}
+        {%endfor%}
+    {% endwith %}
+</head>
+{%endblock%}
+<body>
+
+<!--Навигация-->
+    {%block menu%}
+    <menu class="menu">
+        <nav class="nav__menu">
+            {% with request.resolver_match.url_name as url_name %}
+                    <a href="{% url 'main' %}" class="{% if url_name == 'main' %}nav__item--active{% endif %} nav__item">главная</a>
+                    <a href="{% url 'portfolio' %}" class="{% if url_name == 'portfolio' %}nav__item--active{% endif %} nav__item">портфолио</a>
+                    <a href="{% url 'about' %}" class="{% if url_name == 'about' %}nav__item--active{% endif %} nav__item">о нас</a>
+                    <a href="{% url 'documents' %}" class="{% if url_name == 'documents' %}nav__item--active{% endif %} nav__item">документы</a>
+                    <a href="{% url 'contacts' %}" class="{% if url_name == 'contacts' %}nav__item--active{% endif %} nav__item">контакты</a>
+            {% endwith %}
+        </nav>
+    </menu>
+{%endblock%}
+{%block content%}
+
+{%endblock%}
+
+{%block footer%}
+<footer class="footer">
+    <p>&copy;Copyright @Junaed 2016, All rights reserved. Author - McClawdy</p>
+    <div class="sprites"></div>
+</footer>
+{%endblock%}

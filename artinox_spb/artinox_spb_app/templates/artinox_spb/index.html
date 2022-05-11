@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+{%extends 'artinox_spb/base.html'%}
+<body>
+	{%block content%}
+	<section class="header">
+		    <div class="header__content">
+        <div class="header__content--textbox">
+            <h1>artinox</h1>
+                <p>I want to believe in time travel.<br>
+                    That one day I’ll come back for you.<br>
+                    Find you in the campus library aisles and I’d say -<br>
+                    "Oh my ancient Mars".<br>
+                </p>
+            {% with request.resolver_match.url_name as url_name %}
+            	<a href="{{url_name}}#order-form" class="header__content--btn">Сделать заказ</a>
+            {% endwith %}
+        </div>
+        <div class="header__content--video"><iframe  src="https://www.youtube.com/embed/jGaTXMnScN0" frameborder="0" allowfullscreen></iframe></div>
+    </div>
+	</section>
+	<!--второй блок-->
+	<section class="second-section">
+		<div class="second-section__textBox">
+			<h2>DO YOU KNOW WE CAN<br>PROVIDEFOE YOU?</h2>
+			<p>When the rusty rocks were covered in groves.<br>
+				And the pyramids foretold acidic snows.<br>
+				All was still breathing like my hands on your toes and I said - <br>
+				"Oh my ancient Mars".<br>
+			</p>
+			<a href="#" class="second-section__textBox--btn">Learn More</a>
+		</div>
+			<ul class="second-section__about">
+				<li class="about-element managment"><h4>Managment</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, beatae.</p>
+			</li>
+				<li class="about-element design"><h4>UI/UX Design</h4>
+					<p>sLorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, veniam!</p>
+			</li>
+				<li class="about-element branding"><h4>Logo/Branding</h4>
+					<p>sLorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, libero!</p>
+			</li>
+				<li class="about-element animation"><h4>Animation</h4>
+					<p>sLorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, in.</p>
+			</li>
+		</ul>
+	</section>
+<!--/второй блок-->
+
+<!--третий блок-->
+	<section class="third-section">
+		<div class="third-section__textBox">
+			<h2>наши проекты</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur<br>adipisci maiores, dolores facere magnam, temporibus!</p>
+			<hr>
+		</div>
+		<ul>
+			<li><a href="#">все</a></li>
+			<li><a href="#">недавние</a></li><!--  тут будут ссылка на недавно добавленные фото -->
+			<li><a href="#">WEB TEMPLATE</a></li>
+			<li><a href="#">USER INTERFACE</a></li>
+			<li><a href="#">MOCK-UP</a></li>
+		</ul>
+		<div class="third-section--container">
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+			<div class="third-section--item"></div>
+		</div>
+	</section>
+<!--/тертий блок-->
+
+<!--четвертый блок-->
+	<section class="fourth-section">
+		<h2>MEET OUR LOVE</h2>
+		<p>Several billion golden years ago.<br>
+			I lost a planet that I loved to the cold.<br>
+			Civilization blooms and then it erodes. And that’s it - <br>
+			"Oh my ancient Mars".<br>
+		</p>
+		<hr>
+		<div class="fourth-section__blocks">
+			<div class="fourth-section__blocks--leftblock"></div>
+			<div class="fourth-section__blocks--rightblock">
+				<h3>MARK WAUGH</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, beatae!</p>
+				<ul>
+					<li><a href="https://vk.com/secondked">VK</a></li>
+					<li><a href="https://www.facebook.com/nikita.zammer">Facebook</a></li>
+					<li><a href="https://www.instagram.com/dneirf_olleh">Instagram</a></li>
+					<li><a href="#">Twitter</a></li>
+				</ul>
+				<div class="fourth-section__blocks--workers">1</div>
+				<div class="fourth-section__blocks--workers">2</div>
+				<div class="fourth-section__blocks--workers">3</div>
+				<div class="fourth-section__blocks--workers">4</div>
+			</div>
+		</div>
+	</section>
+<!--/четвертый блок-->
+
+<!--пятый блок-->
+	<section class="feedback">
+		<h2>оставьте свои контактные данные и мы с вами свяжемся</h2>
+		<div>
+			<form action="POST" name="feedback__form" class="feedback__form">
+				<input type="text" name="feedback__form--fullname" class="feedback__form--fullname feedback__form__element" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
+				<input type="email" name="feedback__form--email" class="feedback__form--email feedback__form__element" placeholder="Email" required=""
+				placeholder="Email" oninvalid="this.setCustomValidity('Необходимо заполнить email')">
+				<input type="tel" name="feedback__form--tel" class="feedback__form--tel feedback__form__element" placeholder="Номер телефона" required=""
+				placeholder="Номер телефона" oninvalid="this.setCustomValidity('Необходимо заполнить телефон')">
+				<input type="submit" class="feedback__form--btn feedback__form__element" name="feedback__form--btn" value="SUBSCRIBE">
+			</form>
+			<div class="section-fifth__btn"></div>
+		</div>
+	</section>
+	<!--/пятый блок-->
+
+	<!--шестой блок-->
+	<section class="order-form" id="order-form">
+		<div class="order-form__header">
+			<h2>GET IN TOUCH</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Obcaecati minima quas dolore illo, sapiente eveniet <br>necessitatibus sunt nisi rerum magnam.</p>
+		</div>
+		
+			<form action="{% url 'upload_files' %}" method="POST" name="order-form__form" accept-charset='utf-8' class="order-form__form" enctype="multipart/form-data">{% csrf_token %}
+
+				<input type="text" name="fullname" class=" order-form__element order-form__element--fullname" required="" placeholder="ФИО"  oninvalid="this.setCustomValidity('Необходимо заполнить ФИО')">
+
+				<input type="email" name="email" class=" order-form__element order-form__element--email" required=""
+				placeholder="Email" oninvalid="this.setCustomValidity('Необходимо заполнить email')">
+
+				<input type="tel" name="tel" class="order-form__element order-form__element--tel" required=""
+				placeholder="Номер телефона" oninvalid="this.setCustomValidity('Необходимо заполнить телефон')">
+
+				<input type="text" name="product_name" class=" order-form__element order-form__element--product_name" required="" placeholder="Название изделия" oninvalid="this.setCustomValidity('Необходимо заполнить название изделия')">
+
+				<input type="text" name="address" class=" order-form__element order-form__element--address" required="" placeholder="Адрес установки" oninvalid="this.setCustomValidity('Необходимо заполнить адрес')">
+				
+				<textarea type="textarea" name="task_text" class=" order-form__element order-form__element--textbox"  rows="20" placeholder="Комментарий"></textarea>
+
+				<input type="file" name="technical_task" class=" order-form__element order-form__element--technical_task" enctype="multipart/form-data" required placeholder="Техничческое задание">
+
+				<input type="file" name="technical_plan" class=" order-form__element order-form__element--technical_plan" enctype="multipart/form-data" required placeholder="Чертёж">
+
+				<input type="submit" name="button" class="order-form__element order-form__element--btn" required="" value="отпарвить">
+			</form>
+		<div class="order-form__information">
+			<h4>CONTACT INFO</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore beatae deserunt sint dignissimos. Eius, vero, nesciunt. Eveniet ut, suscipit laboriosam, est sunt explicabo repellat perferendis odit porro cumque, delectus labore.</p>
+		</div>
+	</section>
+	<!--/шестой блок-->
+	{%endblock%}
+</body>
+</html>
